@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Photography by Sharatkumar Chilaka — capturing nature, family, and the quiet stories of everyday life through a curious lens." />
+  <title>Photography — Sharatkumar Chilaka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="index.html" class="logo">SC<span class="logo-dot">.</span></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="career.html" class="nav-link">CAREER</a>
+        <a href="blog.html" class="nav-link">BLOG</a>
+        <a href="photography.html" class="nav-link active">PHOTOGRAPHY</a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="hero-bg">
+      <div class="rgb-wave"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="page-hero-content">
+      <p class="section-eyebrow">Photography</p>
+      <h1>Quiet stories, captured one frame at a time.</h1>
+      <p>A personal collection of moments — the light through monsoon clouds, the hush of a forest, the unguarded smiles of family.</p>
+    </div>
+  </section>
+
+  <section class="page-section">
+    <div class="container">
+      <div class="filter-bar" role="tablist" aria-label="Photography categories">
+        <button class="filter-chip active" data-filter="all">All</button>
+        <button class="filter-chip" data-filter="nature">Nature</button>
+        <button class="filter-chip" data-filter="travel">Travel</button>
+        <button class="filter-chip" data-filter="family">Family</button>
+        <button class="filter-chip" data-filter="street">Street</button>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="gallery-item" data-category="nature">
+          <div class="gallery-bg">Misty Western Ghats</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">Monsoon Veil</span>
+            <span class="gallery-location">Western Ghats, India</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="travel">
+          <div class="gallery-bg">Old Quarter Lanes</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">After the Rain</span>
+            <span class="gallery-location">Pondicherry, India</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="family">
+          <div class="gallery-bg">Birthday Candles</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">Five Wishes</span>
+            <span class="gallery-location">Mumbai, India</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="nature">
+          <div class="gallery-bg">Golden Hour Field</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">Last Light</span>
+            <span class="gallery-location">Lonavala, India</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="street">
+          <div class="gallery-bg">Tea Stall at Dawn</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">First Brew</span>
+            <span class="gallery-location">Hyderabad, India</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="travel">
+          <div class="gallery-bg">Reflections on Water</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">Still Mornings</span>
+            <span class="gallery-location">Kerala Backwaters</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="nature">
+          <div class="gallery-bg">Forest Floor Macro</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">Tiny Worlds</span>
+            <span class="gallery-location">Matheran, India</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="family">
+          <div class="gallery-bg">Hands &amp; Henna</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">Wedding Day</span>
+            <span class="gallery-location">Hyderabad, India</span>
+          </figcaption>
+        </figure>
+
+        <figure class="gallery-item" data-category="street">
+          <div class="gallery-bg">Festival of Lights</div>
+          <figcaption class="gallery-overlay">
+            <span class="gallery-title">Diwali Night</span>
+            <span class="gallery-location">Mumbai, India</span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="container">
+      <h2>Like what you see?</h2>
+      <p>Follow along on Instagram — I share new work and quiet moments from the road.</p>
+      <a href="#" class="btn btn-primary">Follow on Instagram</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">SC<span class="logo-dot">.</span></a>
+        <p>Building intelligent, immersive, and human-centered technologies.</p>
+      </div>
+      <div class="footer-socials">
+        <a href="#" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14zM8.34 18.34V9.67H5.67v8.67h2.67zM7 8.5A1.5 1.5 0 105.5 7 1.5 1.5 0 007 8.5zm11.34 9.84v-4.74c0-2.55-1.36-3.74-3.18-3.74a2.74 2.74 0 00-2.49 1.37V9.67h-2.67v8.67h2.67v-4.84c0-1.27.24-2.5 1.81-2.5s1.59 1.45 1.59 2.58v4.76z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.16c3.2 0 3.58 0 4.85.07a6.6 6.6 0 012.23.41 3.97 3.97 0 011.43.93 3.97 3.97 0 01.93 1.43 6.6 6.6 0 01.41 2.23c.06 1.27.07 1.65.07 4.85s0 3.58-.07 4.85a6.6 6.6 0 01-.41 2.23 4.24 4.24 0 01-2.36 2.36 6.6 6.6 0 01-2.23.41c-1.27.06-1.65.07-4.85.07s-3.58 0-4.85-.07a6.6 6.6 0 01-2.23-.41 4.24 4.24 0 01-2.36-2.36 6.6 6.6 0 01-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s0-3.58.07-4.85a6.6 6.6 0 01.41-2.23A3.97 3.97 0 013.57 3.5a3.97 3.97 0 011.43-.93 6.6 6.6 0 012.23-.41C8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33 0 7.05.07a8.78 8.78 0 00-2.91.56 5.88 5.88 0 00-2.13 1.39A5.88 5.88 0 00.63 4.14a8.78 8.78 0 00-.56 2.91C0 8.33 0 8.74 0 12s0 3.67.07 4.95a8.78 8.78 0 00.56 2.91 5.88 5.88 0 001.39 2.12 5.88 5.88 0 002.12 1.39 8.78 8.78 0 002.91.56C8.33 24 8.74 24 12 24s3.67 0 4.95-.07a8.78 8.78 0 002.91-.56 6.13 6.13 0 003.51-3.51 8.78 8.78 0 00.56-2.91C24 15.67 24 15.26 24 12s0-3.67-.07-4.95a8.78 8.78 0 00-.56-2.91 5.88 5.88 0 00-1.39-2.12A5.88 5.88 0 0019.86.63a8.78 8.78 0 00-2.91-.56C15.67 0 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zm6.41-11.85a1.44 1.44 0 11-1.44 1.44 1.44 1.44 0 011.44-1.44z"/></svg>
+        </a>
+        <a href="#" class="social-icon" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22.68 0H1.32A1.32 1.32 0 000 1.32v21.36A1.32 1.32 0 001.32 24h11.49v-9.29h-3.13v-3.62h3.13V8.41c0-3.1 1.89-4.79 4.66-4.79a25.7 25.7 0 012.8.14v3.24h-1.92c-1.5 0-1.8.72-1.8 1.76v2.31h3.59l-.47 3.62h-3.12V24h6.12A1.32 1.32 0 0024 22.68V1.32A1.32 1.32 0 0022.68 0z"/></svg>
+        </a>
+      </div>
+      <p class="copyright">© 2026 Sharatkumar Chilaka. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

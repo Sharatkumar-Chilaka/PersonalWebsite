@@ -15,40 +15,47 @@ menuToggle?.addEventListener('click', () => {
   menuToggle.setAttribute('aria-expanded', String(isOpen));
 });
 
-// Close mobile menu when a nav link is clicked
 document.querySelectorAll('.nav-link').forEach((link) => {
   link.addEventListener('click', () => {
-    navLinks.classList.remove('open');
+    navLinks?.classList.remove('open');
     menuToggle?.setAttribute('aria-expanded', 'false');
   });
 });
 
-// Active nav link based on visible section
-const sections = document.querySelectorAll('section[id]');
-const linkMap = new Map();
-document.querySelectorAll('.nav-link').forEach((link) => {
-  const id = link.getAttribute('href')?.replace('#', '');
-  if (id) linkMap.set(id, link);
-});
+// Section-scroll active state — only on the home page, where nav links use anchor hrefs
+const isHomePage = document.querySelector('.hero#home') !== null;
+if (isHomePage) {
+  const sections = document.querySelectorAll('section[id]');
+  const linkMap = new Map();
+  document.querySelectorAll('.nav-link').forEach((link) => {
+    const href = link.getAttribute('href') || '';
+    if (href.startsWith('#')) linkMap.set(href.slice(1), link);
+  });
 
-const sectionObserver = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        document.querySelectorAll('.nav-link').forEach((l) => l.classList.remove('active'));
-        const id = entry.target.getAttribute('id');
-        const link = id ? linkMap.get(id) : null;
-        link?.classList.add('active');
-      }
-    });
-  },
-  { rootMargin: '-45% 0px -50% 0px' }
-);
-sections.forEach((s) => sectionObserver.observe(s));
+  if (linkMap.size > 0) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const id = entry.target.getAttribute('id');
+            const link = id ? linkMap.get(id) : null;
+            if (link) {
+              document.querySelectorAll('.nav-link').forEach((l) => l.classList.remove('active'));
+              link.classList.add('active');
+            }
+          }
+        });
+      },
+      { rootMargin: '-45% 0px -50% 0px' }
+    );
+    sections.forEach((s) => sectionObserver.observe(s));
+  }
+}
 
-// Reveal-on-scroll animation
+// Reveal-on-scroll animation (covers home + sub-pages)
 const revealTargets = document.querySelectorAll(
-  '.about-text, .about-image, .feature-card, .cta-band h2, .cta-band p, .cta-band .btn'
+  '.about-text, .about-image, .feature-card, .cta-band h2, .cta-band p, .cta-band .btn, ' +
+  '.timeline-item, .blog-card, .gallery-item, .page-hero-content'
 );
 revealTargets.forEach((el) => el.classList.add('reveal'));
 
@@ -64,6 +71,26 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.15 }
 );
 revealTargets.forEach((el) => revealObserver.observe(el));
+
+// Filter chips (blog + photography pages)
+const filterChips = document.querySelectorAll('.filter-chip');
+if (filterChips.length > 0) {
+  filterChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const filter = chip.getAttribute('data-filter');
+      const scope = chip.closest('.page-section') || document;
+      filterChips.forEach((c) => c.classList.remove('active'));
+      chip.classList.add('active');
+
+      const items = scope.querySelectorAll('[data-category]');
+      items.forEach((item) => {
+        const category = item.getAttribute('data-category');
+        const show = filter === 'all' || category === filter;
+        item.style.display = show ? '' : 'none';
+      });
+    });
+  });
+}
 
 // Set current year in footer copyright
 const copyright = document.querySelector('.copyright');
